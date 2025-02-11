@@ -1,4 +1,2 @@
 #!/bin/bash
 chown [ "$(stat -c "%U" hello)" = "guillaume" ]  chown vincent hello
-
-
