@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#count = 0 initializes a variable count to be 0
+count=0
+#runs until coumt is greater than or equal to 10
+until [ $count -ge 10 ]
+do
+    echo "Best School"
+    count=$((count + 1))
+done
