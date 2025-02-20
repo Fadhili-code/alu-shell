@@ -2,11 +2,11 @@
 #This script displays the username, user ID, and home directory from /etc/passwd.
 exec < /etc/passwd
 
-while read line
+while IFS= read -r line
 do
-    username=$(echo $line | cut -d: -f1)
-    user_id=$(echo $line | cut -d: -f3)
-    home_directory=$(echo $line | cut -d: -f6)
+    username=$(echo "$line" | cut -d: -f1)
+    user_id=$(echo "$line" | cut -d: -f3)
+    home_directory=$(echo "$line" | cut -d: -f6)
 
     echo "Username: $username"
     echo "User ID: $user_id"
