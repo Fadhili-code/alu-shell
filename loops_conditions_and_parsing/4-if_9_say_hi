@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+count=1 
+# Initialize 'count' to 1
+while [ $count -le 10 ] 
+# The 'while' loop runs as long as 'count' is less than or equal to 10
+do
+    if [ $count -eq 9 ] 
+# Check if 'count' is 9
+    then
+        echo -e "Best School\nHi" 
+#Print"Best School" and "Hi" on a new line using '-e' for newline support
+    else
+        echo "Best School" 
+#Print"Best School" for all other iterations
+    fi
+    count=$((count + 1)) 
+# Increment 'count' by 1
+done  
+# End of the 'while' loop
+
+
