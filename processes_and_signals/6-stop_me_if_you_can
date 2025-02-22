@@ -3,8 +3,18 @@
 pid=$(pgrep -f "4-to_infinity_and_beyond")
 
 if [[ -n "$pid" ]]; then
-    pkill -TERM -f "4-to_infinity_and_beyond"
+    # Stop the process using pkill without using kill or killall
+    pkill -9 -f "4-to_infinity_and_beyond"
     echo "4-to_infinity_and_beyond process has been stopped."
 else
     echo "No running 4-to_infinity_and_beyond process found."
 fi
+
+
+
+
+
+
+
+
+
