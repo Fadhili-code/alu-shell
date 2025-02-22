@@ -1,3 +1,8 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC2009
-cat /proc/*/cmdline 2>/dev/null | grep -a --color=never "bash" | awk -F/ '{print $(NF-1), $0}'
+for pid in /proc/[0-9]*; do
+    cmd=$(cat "$pid/cmdline" 2>/dev/null | tr '\0' ' ')
+    if [[ $cmd == *bash* ]]; then
+        echo "$(basename "$pid") $cmd"
+    fi
+done
