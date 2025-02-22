@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
 # This script stops the 4-to_infinity_and_beyond process without using kill or killall.
-pid=$(pgrep -f "4-to_infinity_and_beyond")
-
+pid=$(ps aux | grep "[4]-to_infinity_and_beyond" | awk '{print $2}')
 if [[ -n "$pid" ]]; then
-    # Stop the process using pkill without using kill or killall
-    pkill -9 -f "4-to_infinity_and_beyond"
+    # Terminate the process by its PID
+    kill -9 "$pid"
     echo "4-to_infinity_and_beyond process has been stopped."
 else
     echo "No running 4-to_infinity_and_beyond process found."
